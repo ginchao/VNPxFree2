@@ -7,7 +7,7 @@ if game.PlaceId~=7258239416 then
   local win = DiscordLib:Window("Test Hub")  
 local per = game.Players.LocalPlayer.Name
  DiscordLib:Notification("Test Hub","Hello! "..""..per..".                                              ".."Thanks For Using Test Hub","Ok") 
-  local serv = win:Server("VietNamPiece Pvp 2", "")  
+  local serv = win:Server("VNP2 X Free", "")  
   local drops = serv:Channel("Mob")  
   local quest = nil  
   local drop = drops:Dropdown("Mob lv 2000 > lv 12000", {"Kaido","Paw User","King Vampire","Magma Boss","String Boss","Nick Beo","Tango"}, function(y)  
