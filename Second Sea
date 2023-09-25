@@ -1,0 +1,691 @@
+if game.PlaceId~=7258239416 then  
+  loadstring(game:HttpGet('https://raw.githubusercontent.com/ginchao/Viet-Nam-Piece-1/main/Beta1'))()  
+  elseif game.PlaceId==4587545091 then  
+  loadstring(game:HttpGet('https://raw.githubusercontent.com/ginchao/Viet-Nam-Piece-1/main/Beta1'))()  
+  elseif game.PlaceId==7258239416 then  
+  local DiscordLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/ginchao/Discord-Lib/main/Discord-Lib'))()  
+  local win = DiscordLib:Window("Test Hub")  
+local per = game.Players.LocalPlayer.Name
+ DiscordLib:Notification("Test Hub","Hello! "..""..per..".                                              ".."Thanks For Using Test Hub","Ok") 
+  local serv = win:Server("VietNamPiece Pvp 2", "")  
+  local drops = serv:Channel("Mob")  
+  local quest = nil  
+  local drop = drops:Dropdown("Mob lv 2000 > lv 12000", {"Kaido","Paw User","King Vampire","Magma Boss","String Boss","Nick Beo","Tango"}, function(y)  
+ local plrmainhr = game.Players.LocalPlayer.Character.HumanoidRootPart 
+  if y == "Kaido" or y == "Paw User" or y == "King Vampire" or y == "Magma Boss" or y == "String Boss" or y == "Nick Beo" or y == "Tango" then  
+  quest = y  
+  end  
+  end)  
+  drops:Toggle("Chose Mob To Auto Quest",false, function(questauto)  
+  if quest == nil then  
+  DiscordLib:Notification("Warning", "Choose Mob To Auto Quest", "Ok")  
+  elseif quest ~= nil then  
+  getgenv().autoquest = questauto  
+  spawn(function()  
+  while autoquest do wait()  
+  pcall(function()  
+  if quest == "Kaido" then  
+  game:GetService("Workspace")["KAIDO ISLANDDDDDDDD"]["KAIDOUU QUESTTT"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
+  elseif quest == "Paw User" and quest ~= nil then  
+  game:GetService("Workspace")["Platinum Town [ 2000 - 3000 ]"]["Platinum npc"]["QUEST DARK"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
+  elseif quest == "King Vampire" and quest ~= nil then  
+  game:GetService("Workspace")["Platinum Town [ 2000 - 3000 ]"]["Platinum npc"]["QUEST DARK"].ClickPart.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()  
+  elseif quest == "Magma Boss" and quest ~= nil then  
+  game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]["QUEST ADMIRAL"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
+  elseif quest == "String Boss" and quest ~= nil then  
+  game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]["QUEST ADMIRAL"].ClickPart.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()  
+  elseif quest == "Nick Beo" and quest ~= nil then  
+  game:GetService("Workspace")["NickBeo Island"]["Quest NickBeo"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
+  elseif quest == "Tango" and quest ~= nil then  
+  game:GetService("Workspace")["NickBeo Island"]["Quest Tango"].Quest.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()  
+  end  
+  end)  
+  end  
+  end)  
+  end  
+  end)  
+  drops:Toggle("Auto Bring Mob Choose", false, function(mob)  
+  local plrmainhr = game.Players.LocalPlayer.Character.HumanoidRootPart 
+ local fiv = game:GetService("Workspace")["NPC DAMAGE"] 
+  if quest == nil then  
+  DiscordLib:Notification("Warning", "Choose Mob To Auto Bring", "Ok")  
+  elseif quest ~= nil then  
+ getgenv().automob = mob 
+ spawn(function() 
+ while automob do wait() 
+ pcall(function() 
+ if quest == "Kaido" then 
+ fiv.Kaidou.HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,0,-10) 
+ elseif quest == "Paw User" then 
+ fiv["Paw User"].HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,0,-6) 
+ elseif quest == "King Vampire" then 
+ fiv["King Vampire"].HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,0,-6) 
+ elseif quest == "Magma Boss" then 
+ fiv["Magma Admiral"].HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,0,-6) 
+ elseif quest == "String Boss" then 
+ fiv["String Admiral"].HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,0,-6) 
+ elseif quest == "Nick Beo" then 
+ fiv.NickBeo.HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,0,-6) 
+ elseif quest == "Tango" then 
+ fiv.Tango.HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,0,-6) 
+ end 
+  end)  
+  end  
+ end) 
+ end 
+  end) 
+  drops:Label("Auto Quest Đã Được Tối Ưu")  
+  local tgls = serv:Channel("Stats and Buy")   
+   tgls:Toggle("Auto Sword",false, function(z)   
+   getgenv().autostats = z   
+  spawn(function()  
+   while autostats do wait()  game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("Sword")   
+   wait()   
+   end   
+  end)  
+   end)   
+   tgls:Toggle("Auto Fruit",false, function(z)   
+   getgenv().autostats = z   
+  spawn(function()  
+   while autostats do wait()   
+   game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("DevilFruit")   
+   wait()   
+   end   
+  end)  
+   end)   
+   tgls:Toggle("Auto Health",false, function(z)   
+   getgenv().autostats = z   
+  spawn (function()  
+   while autostats do wait()   
+   game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("MaxHealth")   
+   wait()   
+   end   
+  end)  
+   end)   
+   tgls:Toggle("Auto Melee",false, function(z)   
+   getgenv().autostats = z   
+  spawn(function()  
+   while autostats==true do wait()   
+   game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("Melee")   
+   wait()   
+   end  
+  end)  
+   end)   
+  
+  tgls:Label("Buy")   
+  tgls:Toggle("AutoClickGodBox",false, function(e)  
+  getgenv().autobox = e 
+ for _ = 1,2 do 
+ while autobox do wait() 
+ fireclickdetector(game:GetService("Workspace")["Platinum Town [ 2000 - 3000 ]"].PlatinumMAP.GodBox.ClickDetector) 
+ end 
+ end 
+ end) 
+  tgls:Toggle("Auto Random Secret Fruit",false, function(v)  
+  for _ = 1,2 do  
+  getgenv().auto = v  
+  spawn(function()  
+  while auto do wait()  
+  pcall(function()  
+  fireclickdetector(game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]["Secret Random"].RANDOM) wait()  
+  end)  
+  end  
+  end)  
+  end  
+  end)  
+  
+    local drops = serv:Channel("Weapon")    
+    local Weaponlist = {}    
+    local Weapon = nil    
+    for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do    
+    if v:IsA("Tool") then    
+            table.insert(Weaponlist,v.Name)    
+    end    
+    end    
+    local drop = drops:Dropdown("Pick", Weaponlist, function(m)    
+    for i, k in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do    
+    if m == k.Name then    
+            Weapon = m    
+    if Weapon then    
+    game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))    
+    end    
+    end    
+    end    
+    end)    
+    drops:Button("Refresh Weapon", function()    
+    drop:Clear()    
+    for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do    
+    if v:IsA("Tool") then    
+    drop:Add(v.Name)    
+    end    
+    end    
+    end)    
+    drops:Toggle("Auto Equip",false, function(a)   
+   if Weapon == nil then   
+   DiscordLib:Notification("Warning", "Choose Weapon to AutoEquip", "Ok")   
+   elseif Weapon ~= nil then   
+            AutoEquiped = a    
+   end   
+    end)    
+    spawn(function()    
+            while wait() do    
+                    if AutoEquiped then    
+                            pcall(function()    
+                                    game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))    
+                            end)    
+                    end    
+            end    
+    end)    
+   drops:Toggle("Choose Weapon To Fast Actack",false, function(v)   
+   if Weapon == nil then   
+   DiscordLib:Notification("Warning", "Choose Weapon to Fast Attack", "Ok")   
+   elseif Weapon ~= nil then   
+    getgenv().er = v    
+    spawn(function()    
+    while er == true do    
+    pcall(function()    
+    while er do wait()  game:GetService("Players").LocalPlayer.Character[Weapon].Hitbox:FireServer(1, 1)    
+    wait()    
+    end    
+    end)    
+    end    
+    end)   
+   end   
+    end)    
+    
+    local drops = serv:Channel("Player")    
+    local plrlist = {}    
+    local plr = nil    
+    for i, v in pairs(game:GetService("Players"):GetChildren()) do    
+    table.insert(plrlist,v.Name)    
+    end    
+    local drop = drops:Dropdown("Choose Player", plrlist, function(m)    
+    for i, b in pairs(game:GetService("Workspace"):GetChildren()) do    
+    if m == b.name then    
+    plr = m    
+    end    
+    end    
+    end)    
+    drops:Button("Refresh Player", function()    
+    drop:Clear()    
+    for i, v in pairs(game.Players:GetChildren()) do    
+    if v:IsA("Player") then    
+    drop:Add(v.Name)    
+    end    
+    end    
+    end)    
+    drops:Button("Teleport To Player, Need LoadMap", function()   
+  if plr == nil then  
+  DiscordLib:Notification("Warning", "Choose Player to Teleport Player", "Ok")  
+  elseif plr ~= nil then  
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[plr].Character.HumanoidRootPart.CFrame   
+  end  
+   end)   
+   drops:Button("Choose Player To Super Ultra Skill, Need Loadmap", function()   
+  if plr == nil then  
+  DiscordLib:Notification("Warning", "Choose Player to Super Ultra Skill", "Ok")  
+  elseif plr ~= nil then  
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[plr].Character.HumanoidRootPart.CFrame   
+   wait(0.1)   
+   for i,v in pairs(game:GetDescendants()) do   
+   if v:IsA("RemoteEvent") and v.Name == "Fire" then   
+   v:FireServer()   
+   end   
+   end  
+  end  
+   end)   
+  drops:Toggle("Spectate Player",false, function(h)  
+  if plr == nil then  
+  DiscordLib:Notification("Warning", "Choose Player to Spectate", "Ok")  
+  elseif plr ~= nil then  
+  getgenv().view = h  
+  spawn(function()  
+  while view do wait()  
+  workspace.CurrentCamera.CameraSubject = game.Players[plr].Character  
+  if view == false then  
+  workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character  
+  end  
+  end  
+  end)  
+  end  
+  end)  
+  
+   drops:Toggle("Auto Teleport Player, Need LoadMap",false, function(t)   
+  if plr == nil then  
+  DiscordLib:Notification("Warning", "Choose Player to Auto Teleport Player", "Ok")  
+  elseif plr ~= nil then  
+   getgenv().autotele = t   
+   spawn(function()   
+   while autotele do wait()   
+   pcall(function()   
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[plr].Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 6) wait()   
+   end)   
+   end   
+   end)   
+  end  
+   end)   
+   drops:Toggle("Auto Bring Player",false, function(a)   
+  if plr == nil then  
+  DiscordLib:Notification("Warning", "Choose Player to Bring Player", "Ok")  
+  elseif plr ~= nil then  
+ for _ = 1,10 do wait() 
+   getgenv().AutoBr = a   
+   spawn(function()   
+   while AutoBr do wait()   
+   pcall(function()   
+  
+   game.Players[plr].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -5) wait()   
+   end)   
+   end   
+   end)   
+  end  
+ end 
+   end)   
+   drops:Toggle("Auto Tween Bring Player",false, function(p)   
+  if plr == nil then  
+  DiscordLib:Notification("Warning", "Choose Player to Tween Bring Player", "Ok")  
+  elseif plr ~= nil then  
+   getgenv().autobri = p   
+   spawn(function()   
+   while autobri do wait()   
+   pcall(function()   
+  
+   local ok = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)   
+   local tween = game.TweenService:Create(game.Players[plr].Character.HumanoidRootPart, TweenInfo.new(), {CFrame = ok * CFrame.new(0, 5, 0)})    
+   tween:Play() wait()   
+  
+   end)   
+   end   
+   end)   
+  end  
+   end)   
+    drops:Toggle("Auto Bring All Player",false, function(t)   
+ for _ = 1,10 do wait() 
+    getgenv().autobring1 = t   
+   spawn(function()   
+   while getgenv().autobring1 do wait()   
+   spawn(function()   
+   for i, v in pairs(game.Players:GetChildren()) do   
+   local ok = game.Players.LocalPlayer.Name   
+   if v.Name ~=  ok  then    
+   v.Character.HumanoidRootPart.CFrame  = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -7) wait()   
+   end   
+   end   
+   end)   
+   end   
+   end)  
+ end  
+    end)    
+    drops:Label("Need Player In Your Sever")    
+    
+ local drops = serv:Channel("Player2") 
+ drops:Label("Fast Acttack No Equip No Choose, _Fastattack")  
+  drops:Toggle("Fast Acttack ",false, function(e)  
+  getgenv().auto = e  
+  spawn(function()  
+  while auto do wait()  
+  for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do  
+  if v:IsA("Tool") and v:FindFirstChild("Hitbox") then  
+  v.Hitbox:FireServer(90,90,90)  
+  end  
+  end  
+  end  
+  end)  
+  end)  
+   local plrlist = {}   
+   local plr = nil   
+   for i, v in pairs(game:GetService("Players"):GetChildren()) do   
+   table.insert(plrlist,v.Name)   
+   end   
+   local drop = drops:Dropdown("Choose Player To Hitbox", plrlist, function(y)   
+   for i, v in pairs(game.Players:GetPlayers()) do   
+   if v.Name == y then   
+   plr = y   
+   end   
+   end   
+   end)   
+   drops:Button("Refresh Player", function()    
+   drop:Clear()   
+   for i, b in pairs(game.Players:GetPlayers()) do   
+   drop:Add(b.Name)   
+   end   
+   end)   
+   
+   local sldr = drops:Slider("Player Hitbox", 0, 2500, 0, function(t)   
+   if plr == nil then   
+   DiscordLib:Notification("Warning", "Choose Player to Hitbox Player", "Ok")   
+   elseif plr ~= nil then   
+   local plr1 = game.Players.LocalPlayer   
+   if game.Players ~= plr1 and game.Players[plr].Character:FindFirstChild("HumanoidRootPart") then   
+   local sizeArg = t   
+                           local Size = Vector3.new(sizeArg,sizeArg,sizeArg)   
+                           local Root = game.Players[plr].Character:FindFirstChild("HumanoidRootPart")   
+                           if Root:IsA("BasePart") then   
+                   if not sizeArg == 1 then   
+                                           Root.Size = Vector3.new(2,1,1)   
+                                           Root.Transparency = 0.4   
+                                   else   
+                                           Root.Size = Size   
+                                           Root.Transparency = 0.4   
+                                   end   
+   end   
+   end   
+   end   
+   end)  
+ local Noclipping = nil 
+ drops:Toggle("Noclip",false, function(v) 
+ getgenv().Clip = v 
+ wait(0.1) 
+ local function NoclipLoop() 
+ if Clip == true and game.Players.LocalPlayer.Character ~= nil then 
+ for _, c in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do 
+                                 if c:IsA("BasePart") and c.CanCollide == true and c.Name ~= floatName then 
+ c.CanCollide = false 
+ end 
+ end 
+ end 
+ end 
+ Noclipping = game.RunService.Stepped:Connect(NoclipLoop) 
+ if not getgenv().Clip then Noclipping:Disconnect() end 
+ end) 
+  
+  drops:Button("Hitbox 1", function()  
+  sldr:Change(1)  
+  end)  
+  drops:Button("Hitbox 80", function()  
+  sldr:Change(80)  
+  end)  
+  drops:Button("Hitbox 500", function()  
+  sldr:Change(500)  
+  end)  
+  drops:Button("Hitbox 2500 Max", function()  
+  sldr:Change(2500)  
+  end)  
+  drops:Button("Hitbox all Player", function()  
+  local plr = game.Players.LocalPlayer  
+  Players = game:GetService("Players")  
+          for i, v in pairs(Players:GetPlayers()) do  
+  if v ~= plr and v.Character:FindFirstChild("HumanoidRootPart") then  
+  local sizeArg = 2500  
+                          local Size = Vector3.new(sizeArg,sizeArg,sizeArg)  
+                          local Root = v.Character:FindFirstChild("HumanoidRootPart")  
+                          if Root:IsA("BasePart") then  
+                  if not sizeArg == 1 then  
+                                          Root.Size = Vector3.new(2,1,1)  
+                                          Root.Transparency = 0.4  
+                                  else  
+                                          Root.Size = Size  
+                                          Root.Transparency = 0.4  
+                                  end  
+  end  
+  end  
+  end  
+  end)  
+   local sldrs = serv:Channel("Walk Speed")    
+   sldrs:Button("Clear", function(v)    
+    game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2    
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16    
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50    
+    end)    
+    local sldr = sldrs:Slider("Speeds", 0, 1000, 0, function(v)    
+  
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v    
+    end)    
+    sldrs:Button("Speed 1000", function()    
+    sldr:Change(1000)    
+    end)    
+    sldrs:Button("Speed 500", function()    
+    sldr:Change(500)    
+    end)    
+    sldrs:Button("Speed 300", function()    
+    sldr:Change(300)    
+    end)    
+    sldrs:Button("Speed 100", function()    
+    sldr:Change(100)    
+    end)    
+    sldrs:Button("Speed 50", function()    
+    sldr:Change(50)    
+    end)    
+    sldrs:Button("Speed 30", function()    
+    sldr:Change(30)    
+    end)    
+    local sldr = sldrs:Slider("Jumps", 0, 1000, 0, function(v)    
+  
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v    
+    end)    
+    sldrs:Button("Jump 1000", function()    
+    sldr:Change(1000)    
+    end)    
+    sldrs:Button("Jump 500", function()    
+    sldr:Change(500)    
+    end)    
+    sldrs:Button("Jump 300", function()    
+    sldr:Change(300)    
+    end)    
+    sldrs:Button("Jump 100", function()    
+    sldr:Change(100)    
+    end)    
+    sldrs:Button("Jump 70", function()    
+    sldr:Change(70)    
+    end)    
+    local sldr = sldrs:Slider("height", 0, 100, 0, function(v)    
+    game.Players.LocalPlayer.Character.Humanoid.HipHeight = v    
+    end)    
+    sldrs:Button("height 100", function()    
+    sldr:Change(100)    
+    end)    
+    sldrs:Button("height 50", function()    
+    sldr:Change(50)    
+    end)    
+    sldrs:Button("height 30", function()    
+    sldr:Change(30)    
+    end)    
+    sldrs:Button("height 10", function()    
+    sldr:Change(10)    
+    end)   
+  local btns = serv:Channel("Island")  
+  
+  btns:Button("Kaido Island lv 2000", function()  
+          local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart  
+          rootPart.CFrame = CFrame.new(-708.903564, 87687.7266, 809.050476, 0.312079072, -9.11389222e-08, 0.950056136, -5.59602764e-09, 1, 9.77682433e-08, -0.950056136, -3.58279628e-08, 0.312079072)*CFrame.new(0, 5, 0)  
+  end)  
+  btns:Button("Nickbeo Island lv 7000+", function()  
+          local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart  
+          rootPart.CFrame = CFrame.new(-1622.85156, 87698.5469, 622.421936, -0.0521310531, -0, -0.998640239, -0, 1, -0, 0.998640239, 0, -0.0521310531)*CFrame.new(0, 10, 0)  
+  end)  
+  btns:Button("Marine Island lv 3000+", function()  
+          local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart  
+          rootPart.CFrame = CFrame.new(-152.420593, 87740.3125, -2115.33057, -0.995318413, 0, 0.0966506973, 0, 1, -0, -0.0966507122, 0, -0.995318294)*CFrame.new(0, 15, 0)  
+  end)  
+  btns:Button("Platinum Town lv 2000+", function()  
+          local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart  
+          rootPart.CFrame = CFrame.new(-1280.56299, 87693.3281, 3242.69702, -0.0239899773, -0, -0.999712229, -0, 1, -0, 0.999712229, 0, -0.0239899773)*CFrame.new(0,9, 0)  
+  end)  
+  local btns = serv:Channel("Mics")  
+  btns:Label("Cre Hub:Grabiel Ynu")  
+  local inf = nil  
+  btns:Toggle("Infjump", false, function(v)  
+  if inf then inf:Disconnect() end  
+  getgenv().infi = v  
+  local Player = game.Players.LocalPlayer  
+  if infi ~= inf then  
+  inf = game.UserInputService.JumpRequest:Connect(function()  
+  if infi == false then inf:Disconnect() end  
+      Player.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)  
+  wait()  
+  end)  
+  end  
+  end)  
+  
+  
+  
+  
+  btns:Button("WallSky", function()  
+  
+   Local = game:GetService('Players').LocalPlayer   
+   Char  = Local.Character   
+   touched,tpdback = false, false   
+   Local.CharacterAdded:connect(function(char)   
+       if script.Disabled ~= true then   
+           wait(.25)   
+           loc = Char.HumanoidRootPart.Position   
+           Char:MoveTo(box.Position + Vector3.new(0,.5,0))   
+       end   
+   end)   
+   game:GetService('UserInputService').InputBegan:connect(function(key)   
+       if key.KeyCode == Enum.KeyCode.Equals then   
+           if script.Disabled ~= true then   
+               script.Disabled = true   
+               print'you may re-execute'   
+           end   
+       end   
+   end)   
+   box = Instance.new('Part',workspace)   
+   box.Anchored = true   
+   box.CanCollide = true   
+   box.Size = Vector3.new(1000,2,1000)   
+   box.Position = Vector3.new(10,100000,10)   
+   box.Touched:connect(function(part)   
+       if (part.Parent.Name == Local.Name) then   
+           if touched == false then   
+               touched = true   
+               function apply()   
+                   if script.Disabled ~= true then   
+                       no = Char.HumanoidRootPart:Clone()   
+                       wait(.25)   
+                       Char.HumanoidRootPart:Destroy()   
+                       no.Parent = Char   
+                       Char:MoveTo(loc)   
+                       touched = false   
+                   end end   
+               if Char then   
+                   apply()   
+               end   
+           end   
+       end   
+   end)   
+   repeat wait() until Char   
+   loc = Char.HumanoidRootPart.Position   
+   Char:MoveTo(box.Position + Vector3.new(0,.5,0))   
+   end)   
+   btns:Button("Fast Mode", function()   
+   local ToDisable = {   
+           Textures = true,   
+           VisualEffects = true,   
+           Parts = true,   
+           Particles = true,   
+           Sky = true   
+   }   
+  
+   local ToEnable = {   
+           FullBright = false   
+   }   
+  
+   local Stuff = {}   
+  
+   for _, v in next, game:GetDescendants() do   
+           if ToDisable.Parts then   
+                   if v:IsA("Part") or v:IsA("Union") or v:IsA("BasePart") then   
+                           v.Material = Enum.Material.SmoothPlastic   
+                           table.insert(Stuff, 1, v)   
+                   end   
+           end   
+  
+           if ToDisable.Particles then   
+                   if v:IsA("ParticleEmitter") or v:IsA("Smoke") or v:IsA("Explosion") or v:IsA("Sparkles") or v:IsA("Fire") then   
+                           v.Enabled = false   
+                           table.insert(Stuff, 1, v)   
+                   end   
+           end   
+  
+           if ToDisable.VisualEffects then   
+                   if v:IsA("BloomEffect") or v:IsA("BlurEffect") or v:IsA("DepthOfFieldEffect") or v:IsA("SunRaysEffect") then   
+                           v.Enabled = false   
+                           table.insert(Stuff, 1, v)   
+                   end   
+           end   
+  
+           if ToDisable.Textures then   
+                   if v:IsA("Decal") or v:IsA("Texture") then   
+                           v.Texture = ""   
+                           table.insert(Stuff, 1, v)   
+                   end   
+           end   
+  
+           if ToDisable.Sky then   
+                   if v:IsA("Sky") then   
+                           v.Parent = nil   
+                           table.insert(Stuff, 1, v)   
+                   end   
+           end   
+   end   
+  
+   game:GetService("TestService"):Message("Effects Disabler Script : Successfully disabled "..#Stuff.." assets / effects. Settings :")   
+  
+   for i, v in next, ToDisable do   
+           print(tostring(i)..": "..tostring(v))   
+   end   
+  
+   if ToEnable.FullBright then   
+       local Lighting = game:GetService("Lighting")   
+  
+       Lighting.FogColor = Color3.fromRGB(255, 255, 255)   
+       Lighting.FogEnd = math.huge   
+       Lighting.FogStart = math.huge   
+       Lighting.Ambient = Color3.fromRGB(255, 255, 255)   
+       Lighting.Brightness = 5   
+       Lighting.ColorShift_Bottom = Color3.fromRGB(255, 255, 255)   
+       Lighting.ColorShift_Top = Color3.fromRGB(255, 255, 255)   
+       Lighting.OutdoorAmbient = Color3.fromRGB(255, 255, 255)   
+       Lighting.Outlines = true   
+   end   
+   end)  
+  btns:Button("Rejoin", function()  
+  local tps = game:GetService("TeleportService")  
+                  local plr = game:GetService("Players").LocalPlayer  
+                  tps:TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)  
+  end)  
+   btns:Button("Teleport To First Sea", function() 
+ local tps = game:GetService("TeleportService") 
+ DiscordLib:Notification("Wait a Sec","Teleport To First Sea...","...") 
+ tps:Teleport("4587545091") 
+ end) 
+ btns:Label("More") 
+ btns:Button("Universal, Test Hub", function() 
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/ginchao/TestHub/main/Universal"))() 
+ end) 
+  btns:Button("Lucky Block Battleground", function()   
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/ginchao/LuckyBlockBattleground/main/HttVeg'))()   
+   end)  
+  btns:Button("Sakura Stand", function()  
+  loadstring(game:HttpGet('https://raw.githubusercontent.com/ginchao/Sakura-Stand/main/ST'))()   
+  end)  
+  btns:Button("AUT OLD UNIVERSE", function()  
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/ginchao/OUT-OLD-UNIVERSE/main/UNIVERSE%20OLD" ,true))()  
+  end)  
+  btns:Label("Script")  
+   btns:Button("Tele Tool", function()    
+    mouse = game.Players.LocalPlayer:GetMouse()    
+    tool = Instance.new("Tool")    
+    tool.RequiresHandle = false    
+    tool.Name = "Tele Tool"    
+    tool.Activated:connect(function()    
+    local pos = mouse.Hit+Vector3.new(0,2.5,0)    
+    pos = CFrame.new(pos.X,pos.Y,pos.Z)    
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos    
+    end)    
+    tool.Parent = game.Players.LocalPlayer.Backpack    
+    end)   
+  btns:Button("Infinte Yield", function()  
+  loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()  
+  end)  
+  btns:Button("Anti Afk", function()   
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ginchao/Anti-AFK/main/NO%20KICK" ,true))()   
+   end)   
+   btns:Button("Keyboard", function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()      
+  end)            
+   btns:Button("FlyV3", function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()  
+  end)   
+   btns:Button("Shift Lock", function()         loadstring(game:HttpGet("https://raw.githubusercontent.com/MiniNoobie/ShiftLockx/main/Shiftlock-MiniNoobie",true))()   
+   end)
+ end
