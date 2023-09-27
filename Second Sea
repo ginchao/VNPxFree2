@@ -388,8 +388,8 @@ local per = game.Players.LocalPlayer.Name
  end) 
  end 
  end 
- end 
- end  game:GetService('RunService').RenderStepped:connect(clip) 
+ end game:GetService('RunService').RenderStepped:connect(clip) 
+end
  end) 
   local Noclipping = nil  
   drops:Toggle("Noclip",false, function(v)  
