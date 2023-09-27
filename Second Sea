@@ -387,8 +387,8 @@ local per = game.Players.LocalPlayer.Name
  v.Character.HumanoidRootPart.CanCollide = false 
  end) 
  end 
- end 
- end game:GetService('RunService').RenderStepped:connect(clip) 
+ end  game:GetService('RunService').RenderStepped:connect(clip) 
+end
 end
  end) 
   local Noclipping = nil  
