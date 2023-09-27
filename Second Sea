@@ -371,7 +371,7 @@ local per = game.Players.LocalPlayer.Name
    end   
    end)   
    
-   local sldr = drops:Slider("Player Hitbox", 0, 2500, 0, function(t)   
+   local drop = drops:Slider("Player Hitbox", 0, 2500, 0, function(t)   
    if plr == nil then   
    DiscordLib:Notification("Warning", "Choose Player to Hitbox Player", "Ok")   
    elseif plr ~= nil then   
@@ -386,7 +386,8 @@ local per = game.Players.LocalPlayer.Name
  v.Character.HumanoidRootPart.Transparency = 0.7 
  v.Character.HumanoidRootPart.CanCollide = false 
  end) 
- end 
+ end
+end
  end  game:GetService('RunService').RenderStepped:connect(clip) 
 end
 end
