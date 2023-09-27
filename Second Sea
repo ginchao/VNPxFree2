@@ -409,7 +409,7 @@ local per = game.Players.LocalPlayer.Name
   end)  
   
   drops:Button("Hitbox Refresh", function()  
-  drop:Change(1)  
+  drop:Change("1")  
   end)  
  drops:Button("Change To 2500", function() 
  drop:Change("2500") 
