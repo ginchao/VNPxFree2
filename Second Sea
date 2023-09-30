@@ -35,9 +35,9 @@ local per = game.Players.LocalPlayer.Name
    elseif quest == "String Boss" and quest ~= nil then   
    game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]["QUEST ADMIRAL"].ClickPart.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()   
    elseif quest == "Nick Beo" and quest ~= nil then   
-   game:GetService("Workspace")["NickBeo Island [ 7000+ ]"]["Quest NickBeo"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()   
+   game:GetService("Workspace")["NickBeo Island [ 7000 + ]"]["Quest NickBeo"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()   
    elseif quest == "Tango" and quest ~= nil then   
-   game:GetService("Workspace")["NickBeo Island [ 7000+ ]"]["Quest Tango"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
+   game:GetService("Workspace")["NickBeo Island [ 7000 + ]"]["Quest Tango"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
   end  
   end)  
   end  
