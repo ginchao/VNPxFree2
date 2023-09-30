@@ -10,9 +10,9 @@ local per = game.Players.LocalPlayer.Name
   local serv = win:Server("VNP2 X Free", "")  
   local drops = serv:Channel("Mob")  
   local quest = nil  
-  local drop = drops:Dropdown("Mob lv 2000 > lv 12000", {"Kaido","Paw User","King Vampire","Magma Boss","String Boss","Nick Beo","Tango"}, function(y)  
+    local drop = drops:Dropdown("Mob lv 2000 > lv 12000", {"Kaido","Paw User","King Vampire","Magma Boss","String Boss","Nick Beo","Tango","Garou"}, function(y)  
  local plrmainhr = game.Players.LocalPlayer.Character.HumanoidRootPart 
-  if y == "Kaido" or y == "Paw User" or y == "King Vampire" or y == "Magma Boss" or y == "String Boss" or y == "Nick Beo" or y == "Tango" then  
+  if y == "Kaido" or y == "Paw User" or y == "King Vampire" or y == "Magma Boss" or y == "String Boss" or y == "Nick Beo" or y == "Tango" or y == "Garou" then  
   quest = y  
   end  
   end)  
@@ -25,19 +25,21 @@ local per = game.Players.LocalPlayer.Name
   while autoquest do wait()  
   pcall(function()  
   if quest == "Kaido" then  
-    game:GetService("Workspace")["Kaido Island [ Lv 1000+ ]"]["KAIDOUU QUESTTT"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()   
-   elseif quest == "Paw User" and quest ~= nil then   
-   game:GetService("Workspace")["Platinum Town [ 2000 - 3000 ]"]["Platinum npc"]["QUEST DARK"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()   
-   elseif quest == "King Vampire" and quest ~= nil then   
-   game:GetService("Workspace")["Platinum Town [ 2000 - 3000 ]"]["Platinum npc"]["QUEST DARK"].ClickPart.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()   
-   elseif quest == "Magma Boss" and quest ~= nil then   
-   game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]["QUEST ADMIRAL"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()   
-   elseif quest == "String Boss" and quest ~= nil then   
-   game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]["QUEST ADMIRAL"].ClickPart.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()   
-   elseif quest == "Nick Beo" and quest ~= nil then   
-   game:GetService("Workspace")["NickBeo Island [ 7000 + ]"]["Quest NickBeo"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()   
-   elseif quest == "Tango" and quest ~= nil then   
-   game:GetService("Workspace")["NickBeo Island [ 7000 + ]"]["Quest Tango"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
+  game:GetService("Workspace")["Kaido Island [ Lv 1000+ ]"]["KAIDOUU QUESTTT"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
+  elseif quest == "Paw User" and quest ~= nil then  
+  game:GetService("Workspace")["Platinum Town [ 2000 - 3000 ]"]["Platinum npc"]["QUEST DARK"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
+  elseif quest == "King Vampire" and quest ~= nil then  
+  game:GetService("Workspace")["Platinum Town [ 2000 - 3000 ]"]["Platinum npc"]["QUEST DARK"].ClickPart.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()  
+  elseif quest == "Magma Boss" and quest ~= nil then  
+  game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]["QUEST ADMIRAL"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
+  elseif quest == "String Boss" and quest ~= nil then  
+  game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]["QUEST ADMIRAL"].ClickPart.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()  
+  elseif quest == "Nick Beo" and quest ~= nil then  
+  game:GetService("Workspace")["NickBeo Island [ 7000 + ]"]["Quest NickBeo"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
+  elseif quest == "Tango" and quest ~= nil then  
+  game:GetService("Workspace")["NickBeo Island [ 7000 + ]"]["Quest Tango"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
+elseif quest == "Garou" and quest ~= nil then  
+ game:GetService("Workspace")["Star Island [ Lv 20000+ ]"]["Garou Quest [ Lv 20.000+ ]"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
   end  
   end)  
   end  
@@ -68,13 +70,14 @@ local per = game.Players.LocalPlayer.Name
  fiv.NickBeo.HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,0,-6) 
  elseif quest == "Tango" then 
  fiv.Tango.HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,0,-6) 
+ elseif quest == "Garou" then 
+ fiv.Garou.HumanoidRootPart = plrmainhr.CFrame*CFrame.new(0,0,-6) 
  end 
   end)  
   end  
  end) 
  end 
-  end) 
-  drops:Label("Auto Quest Đã Được Tối Ưu")  
+  end)  
   local tgls = serv:Channel("Stats and Buy")   
    tgls:Toggle("Auto Sword",false, function(z)   
    getgenv().autostats = z   
