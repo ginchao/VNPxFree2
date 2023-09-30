@@ -39,7 +39,7 @@ local per = game.Players.LocalPlayer.Name
   elseif quest == "Tango" and quest ~= nil then  
   game:GetService("Workspace")["NickBeo Island [ 7000 + ]"]["Quest Tango"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
 elseif quest == "Garou" and quest ~= nil then  
- game:GetService("Workspace")["Star Island [ Lv 20000+ ]"]["Garou Quest [ Lv 20.000+ ]"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
+ game:GetService("Workspace")["Star Island [ Lv 20000+ ]"]["Garou Quest [ Lv 20.000+ ]"].Quest.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()  
   end  
   end)  
   end  
@@ -71,7 +71,7 @@ elseif quest == "Garou" and quest ~= nil then
  elseif quest == "Tango" then 
  fiv.Tango.HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,0,-6) 
  elseif quest == "Garou" then 
- fiv.Garou.HumanoidRootPart = plrmainhr.CFrame*CFrame.new(0,0,-6) 
+ fiv.Garou.HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,0,-6)
  end 
   end)  
   end  
