@@ -25,19 +25,19 @@ local per = game.Players.LocalPlayer.Name
   while autoquest do wait()  
   pcall(function()  
   if quest == "Kaido" then  
-  game:GetService("Workspace")["KAIDO ISLANDDDDDDDD"]["KAIDOUU QUESTTT"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
-  elseif quest == "Paw User" and quest ~= nil then  
-  game:GetService("Workspace")["Platinum Town [ 2000 - 3000 ]"]["Platinum npc"]["QUEST DARK"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
-  elseif quest == "King Vampire" and quest ~= nil then  
-  game:GetService("Workspace")["Platinum Town [ 2000 - 3000 ]"]["Platinum npc"]["QUEST DARK"].ClickPart.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()  
-  elseif quest == "Magma Boss" and quest ~= nil then  
-  game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]["QUEST ADMIRAL"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
-  elseif quest == "String Boss" and quest ~= nil then  
-  game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]["QUEST ADMIRAL"].ClickPart.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()  
-  elseif quest == "Nick Beo" and quest ~= nil then  
-  game:GetService("Workspace")["NickBeo Island"]["Quest NickBeo"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
-  elseif quest == "Tango" and quest ~= nil then  
-  game:GetService("Workspace")["NickBeo Island"]["Quest Tango"].Quest.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()  
+    game:GetService("Workspace")["Kaido Island [ Lv 1000+ ]"]["KAIDOUU QUESTTT"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()   
+   elseif quest == "Paw User" and quest ~= nil then   
+   game:GetService("Workspace")["Platinum Town [ 2000 - 3000 ]"]["Platinum npc"]["QUEST DARK"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()   
+   elseif quest == "King Vampire" and quest ~= nil then   
+   game:GetService("Workspace")["Platinum Town [ 2000 - 3000 ]"]["Platinum npc"]["QUEST DARK"].ClickPart.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()   
+   elseif quest == "Magma Boss" and quest ~= nil then   
+   game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]["QUEST ADMIRAL"].ClickPart.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()   
+   elseif quest == "String Boss" and quest ~= nil then   
+   game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]["QUEST ADMIRAL"].ClickPart.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()   
+   elseif quest == "Nick Beo" and quest ~= nil then   
+   game:GetService("Workspace")["NickBeo Island [ 7000+ ]"]["Quest NickBeo"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()   
+   elseif quest == "Tango" and quest ~= nil then   
+   game:GetService("Workspace")["NickBeo Island [ 7000+ ]"]["Quest Tango"].Quest.QuestTake.QuestTake.Accept1.RemoteEvent:FireServer()  
   end  
   end)  
   end  
