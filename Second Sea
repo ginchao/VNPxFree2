@@ -425,9 +425,9 @@ end
  drops:Button("Change To 100", function() 
  drop:Change("100") 
  end) 
-  drops:Toggle("Hitbox All Player",false, function(v) 
+  drops:Button("Hitbox All Player", function() 
  _G.HeadSize = 2500 
- _G.Disabled = v 
+ _G.Disabled = true
  local function hit() 
  if _G.Disabled then 
  for i,v in next, game:GetService('Players'):GetPlayers() do 
@@ -439,10 +439,8 @@ end
  end) 
  end 
  end 
- else drop:Change("1") 
  end 
- end 
- game:GetService('RunService').RenderStepped:connect(hit) 
+ end  game:GetService('RunService').RenderStepped:connect(hit) 
  end)
    local sldrs = serv:Channel("Walk Speed")    
    sldrs:Button("Clear", function(v)    
