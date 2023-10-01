@@ -391,8 +391,9 @@ elseif quest == "Garou" and quest ~= nil then
  end) 
  end
 end
- end  game:GetService('RunService').RenderStepped:connect(clip) 
+ end  
 end
+game:GetService('RunService').RenderStepped:connect(clip) 
 end
  end) 
   local Noclipping = nil  
