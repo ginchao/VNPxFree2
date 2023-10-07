@@ -78,42 +78,141 @@ local per = game.Players.LocalPlayer.Name
   end 
   end  
    end) 
-  local tgls = serv:Channel("Stats and Buy")   
-   tgls:Toggle("Auto Sword",false, function(z)   
-   getgenv().autostats = z   
-  spawn(function()  
-   while autostats do wait()  game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("Sword")   
-   wait()   
-   end   
-  end)  
-   end)   
-   tgls:Toggle("Auto Fruit",false, function(z)   
-   getgenv().autostats = z   
-  spawn(function()  
-   while autostats do wait()   
-   game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("DevilFruit")   
-   wait()   
-   end   
-  end)  
-   end)   
-   tgls:Toggle("Auto Health",false, function(z)   
-   getgenv().autostats = z   
-  spawn (function()  
-   while autostats do wait()   
-   game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("MaxHealth")   
-   wait()   
-   end   
-  end)  
-   end)   
-   tgls:Toggle("Auto Melee",false, function(z)   
-   getgenv().autostats = z   
-  spawn(function()  
-   while autostats==true do wait()   
-   game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("Melee")   
-   wait()   
-   end  
-  end)  
-   end)   
+ local tgls = serv:Channel("Stats and Auto Skill") 
+ tgls:Toggle("Auto Sword",false, function(z) 
+ getgenv().autostats = z 
+ spawn(function() 
+ while autostats do wait() 
+ game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("Sword") 
+ wait() 
+ end 
+ end) 
+ end) 
+ tgls:Toggle("Auto Fruit",false, function(z) 
+ getgenv().autostats = z 
+ spawn(function() 
+ while autostats do wait() 
+ game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("DevilFruit") 
+ wait() 
+ end 
+ end) 
+ end) 
+ tgls:Toggle("Auto Health",false, function(z) 
+ getgenv().autostats = z 
+ spawn(function() 
+ while autostats do wait() 
+ game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("MaxHealth") 
+ wait() 
+ end 
+ end) 
+ end) 
+ tgls:Toggle("Auto Melee",false, function(z) 
+ getgenv().autostats = z 
+ spawn(function() 
+ while autostats==true do wait() 
+ game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("Melee") 
+ wait() 
+ end 
+ end) 
+ end)
+tgls:Label("Auto Skill")
+tgls:Toggle("Auto Z",false, function(z)
+getgenv().autoskill = z
+while autoskill do wait()
+pcall(function()
+for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Tool") and v:FindFirstChild("Z") then
+for i,c in pairs(v.Z:GetChildren()) do
+if c:IsA("RemoteEvent") then
+c:FireServer()
+end
+end
+end
+end
+end)
+end
+end)
+tgls:Toggle("Auto X",false, function(z)
+getgenv().autoskillx = z
+while autoskillx do wait()
+pcall(function()
+for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Tool") and v:FindFirstChild("Z") then
+for i,c in pairs(v.X:GetChildren()) do
+if c:IsA("RemoteEvent") then
+c:FireServer()
+end
+end
+end
+end
+end)
+end
+end)
+tgls:Toggle("Auto C",false, function(z)
+getgenv().autoskillc = z
+while autoskillc do wait()
+pcall(function()
+for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Tool") and v:FindFirstChild("Z") then
+for i,c in pairs(v.C:GetChildren()) do
+if c:IsA("RemoteEvent") then
+c:FireServer()
+end
+end
+end
+end
+end)
+end
+end)
+tgls:Toggle("Auto V",false, function(z)
+getgenv().autoskillv = z
+while autoskillv do wait()
+pcall(function()
+for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Tool") and v:FindFirstChild("Z") then
+for i,c in pairs(v.V:GetChildren()) do
+if c:IsA("RemoteEvent") then
+c:FireServer()
+end
+end
+end
+end
+end)
+end
+end)
+tgls:Toggle("Auto F",false, function(z)
+getgenv().autoskillf = z
+while autoskillf do wait()
+pcall(function()
+for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Tool") and v:FindFirstChild("Z") then
+for i,c in pairs(v.F:GetChildren()) do
+if c:IsA("RemoteEvent") then
+c:FireServer()
+end
+end
+end
+end
+end)
+end
+end)
+tgls:Toggle("Auto N",false, function(z)
+getgenv().autoskilln = z
+while autoskilln do wait()
+pcall(function()
+for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Tool") and v:FindFirstChild("Z") then
+for i,c in pairs(v.N:GetChildren()) do
+if c:IsA("RemoteEvent") then
+c:FireServer()
+end
+end
+end
+end
+end)
+end
+end)
+        
   
   tgls:Label("Buy")   
   tgls:Toggle("AutoClickGodBox",false, function(e)  
