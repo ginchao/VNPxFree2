@@ -180,13 +180,13 @@ end
 end)
 end
 end)
-tgls:Toggle("Auto F",false, function(z)
+tgls:Toggle("Auto B",false, function(z)
 getgenv().autoskillf = z
 while autoskillf do wait()
 pcall(function()
 for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if v:IsA("Tool") and v:FindFirstChild("Z") then
-for i,c in pairs(v.F:GetChildren()) do
+for i,c in pairs(v.B:GetChildren()) do
 if c:IsA("RemoteEvent") then
 c:FireServer()
 end
