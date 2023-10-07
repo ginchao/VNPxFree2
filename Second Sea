@@ -211,7 +211,7 @@ end
 end
 end)
 end
-end
+end)
 tgls:Seperator()
   tgls:Label("Buy")   
   tgls:Toggle("AutoClickGodBox",false, function(e)  
