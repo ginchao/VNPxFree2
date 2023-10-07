@@ -115,7 +115,7 @@ local per = game.Players.LocalPlayer.Name
  end 
  end) 
  end)
-tgls:Label("Auto Skill")
+tgls:Seperator()
 tgls:Toggle("Auto Z",false, function(z)
 getgenv().autoskill = z
 while autoskill do wait()
@@ -211,9 +211,8 @@ end
 end
 end)
 end
-end)
-        
-  
+end
+tgls:Seperator()
   tgls:Label("Buy")   
   tgls:Toggle("AutoClickGodBox",false, function(e)  
   getgenv().autobox = e 
