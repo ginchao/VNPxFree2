@@ -48,7 +48,8 @@ local per = game.Players.LocalPlayer.Name
    end)   
    drops:Toggle("Auto Bring Mob Choose", false, function(mob)   
    local plrmainhr = game.Players.LocalPlayer.Character.HumanoidRootPart  
-  local fiv = game:GetService("Workspace")["NPC DAMAGE"]  
+  local fiv = game:GetService("Workspace")["NPC DAMAGE"]
+local v2 = nil  
    if quest == nil then   
    DiscordLib:Notification("Warning", "Choose Mob To Auto Bring", "Ok")   
    elseif quest ~= nil then   
