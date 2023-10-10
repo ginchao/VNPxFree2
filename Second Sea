@@ -320,14 +320,14 @@ tgls:Seperator()
     end    
     end    
     end)    
-    drops:Button("Teleport To Player, Need LoadMap", function()   
+    drops:Button("Teleport To Player", function()   
   if plr == nil then  
   DiscordLib:Notification("Warning", "Choose Player to Teleport Player", "Ok")  
   elseif plr ~= nil then  
    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[plr].Character.HumanoidRootPart.CFrame   
   end  
    end)   
-   drops:Button("Choose Player To Super Ultra Skill, Need Loadmap", function()   
+   drops:Button("Choose Player To Super Ultra Skill", function()   
   if plr == nil then  
   DiscordLib:Notification("Warning", "Choose Player to Super Ultra Skill", "Ok")  
   elseif plr ~= nil then  
@@ -356,7 +356,7 @@ tgls:Seperator()
   end  
   end)  
   
-   drops:Toggle("Auto Teleport Player, Need LoadMap",false, function(t)  
+   drops:Toggle("Auto Teleport Player",false, function(t)  
  if plr == nil then 
  DiscordLib:Notification("Warning", "Choose Player to Auto Teleport Player", "Ok") 
  elseif plr ~= nil then 
@@ -370,7 +370,7 @@ if autele == false then v2:Disconnect() end game.Players.LocalPlayer.Character.H
   end  
   end
   end)  
-  drops:Toggle("Auto Bring Player, Need LoadMap",false, function(a)  
+  drops:Toggle("Auto Bring Player",false, function(a)  
  if plr == nil then 
  DiscordLib:Notification("Warning", "Choose Player to Bring Player", "Ok") 
  elseif plr ~= nil then 
@@ -384,7 +384,7 @@ if bri == false then v2:Disconnect() end game.Players[plr].Character.HumanoidRoo
  end 
  end 
   end)  
-  drops:Toggle("Auto Tween Bring Player, Need LoadMap",false, function(p)  
+  drops:Toggle("Auto Tween Bring Player",false, function(p)  
  if plr == nil then 
  DiscordLib:Notification("Warning", "Choose Player to Tween Bring Player", "Ok") 
  elseif plr ~= nil then 
@@ -402,7 +402,7 @@ if bri == false then v2:Disconnect() end game.Players[plr].Character.HumanoidRoo
   end)  
  end 
   end)  
-  drops:Toggle("Auto Bring All Player, Need LoadMap",false, function(t)  
+  drops:Toggle("Auto Bring All Player",false, function(t)  
   local v2 = nil
 getgenv().brin = t
 if v2 then a:Disconnect() end
