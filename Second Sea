@@ -61,17 +61,17 @@ if bringmob2 == false then v2:Disconnect() end
  if quest == "Kaido" then 
  fiv.Kaidou.HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,3,-13) 
  elseif quest == "Paw User" then 
- fiv["Paw User"].HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,7,0) 
+ fiv["Paw User"].HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,6,0) 
  elseif quest == "King Vampire" then 
- fiv["King Vampire"].HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,7,0) 
+ fiv["King Vampire"].HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,6,0) 
  elseif quest == "Magma Boss" then 
- fiv["Magma Admiral"].HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,7,0) 
+ fiv["Magma Admiral"].HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,6,0) 
  elseif quest == "String Boss" then 
- fiv["String Admiral"].HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,7,0) 
+ fiv["String Admiral"].HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,6,0) 
  elseif quest == "Nick Beo" then 
- fiv.NickBeo.HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,7,0) 
+ fiv.NickBeo.HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,6,0) 
  elseif quest == "Tango" then 
- fiv.Tango.HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,7,0) 
+ fiv.Tango.HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,6,0) 
  elseif quest == "Garou" then 
  fiv.Garou.HumanoidRootPart.CFrame = plrmainhr.CFrame*CFrame.new(0,7,0)
  end 
