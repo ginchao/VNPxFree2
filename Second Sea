@@ -613,6 +613,55 @@ end
   end)  
   local btns = serv:Channel("Mics")  
   btns:Label("Cre Hub:Grabiel Ynu")  
+btns:Textbox("Bug Report", "Type!", true, function(t)
+if t then
+DiscordLib:Notification("Thông Báo","Tin Nhắn Đã Được Gửi.","Ok")
+HttpService = game:GetService("HttpService") 
+ Webhook_URL =  "https://discord.com/api/webhooks/1167083350499020841/Iu6pVDxhv8tUDaf-tR4gCt4W8e9YGYfXF46M52uLN4jQHcfvAUJEJIl8bnY4KKu0WTD0" 
+ local ok = request or http_request or (http and http.request) or syn.request 
+ ok( 
+ { 
+ Url = Webhook_URL, 
+ Method = 'POST', 
+ Headers = { 
+ ['Content-Type'] = 'application/json' 
+ }, 
+ Body = HttpService:JSONEncode({ 
+ ["content"] = "", 
+ ["embeds"] = {{ 
+ ["author"] = { 
+ ["name"] = "", 
+ ["icon"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=100&height=100&format=png" 
+ }, 
+ ["title"] = "Game ID: "..game.PlaceId, 
+ ["description"] = "{ ["..game.Players.LocalPlayer.DisplayName.."] | "..game.Players.LocalPlayer.Name.." } Vừa Báo Lỗi", 
+ ["type"] = "rich", 
+ ["color"] = tonumber(0xffffff), 
+ ["fields"] = { 
+ { 
+ ["name"] = "Script Join:", 
+ ["value"] = "game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId,'"..game.JobId.."')", 
+ ["inline"] = true }, 
+ { 
+ ["name"] = "Người Dùng ID:", 
+ ["value"] = game:GetService("Players").LocalPlayer.UserId, 
+ ["inline"] = true }, 
+ { 
+["name"] = "Nội Dung:", 
+ ["value"] = t, 
+ ["inline"] = true },
+ {
+ ["name"] = "Số tuổi của Account:", 
+ ["value"] = game:GetService("Players").LocalPlayer.AccountAge, 
+ ["inline"] = true } 
+ } 
+ }} 
+ }) 
+ })
+else
+DiscordLib:Notification("Thông Báo","Tin Nhắn Chưa Được Gửi Hãy Thử Lại...","Ok..")
+end
+end)
   local inf = nil  
   btns:Toggle("Infjump", false, function(v)  
   if inf then inf:Disconnect() end  
