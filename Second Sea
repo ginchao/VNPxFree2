@@ -633,7 +633,7 @@ HttpService = game:GetService("HttpService")
  ["name"] = "", 
  ["icon"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=100&height=100&format=png" 
  }, 
- ["title"] = "Game ID: "..game.PlaceId, 
+ ["title"] = "🐛"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name, 
  ["description"] = "{ ["..game.Players.LocalPlayer.DisplayName.."] | "..game.Players.LocalPlayer.Name.." } Vừa Báo Lỗi", 
  ["type"] = "rich", 
  ["color"] = tonumber(0xffffff), 
