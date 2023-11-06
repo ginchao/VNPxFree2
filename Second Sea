@@ -31,7 +31,7 @@ if quest == nil then
 if bringmob2 ~= v2 then
 v2 = game.RunService.RenderStepped:Connect(function()
 if bringmob2==false then v2:Disconnect()  end
-game.Workspace["NPC DAMAGE"][quest].HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,6.5,0)
+game.Workspace["NPC DAMAGE"][quest].HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,6.2,0)
 if quest == "Kaidou" then
 game.Workspace["NPC DAMAGE"][quest].HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,3,-13)
 end
