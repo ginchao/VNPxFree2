@@ -1,18 +1,4 @@
--- // Anti afk V2 \\--
-task.spawn(function()
-    if game.PlaceId ~= 9821272782 then
-        getgenv().Press = function(v)
-            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-        end
-        while true do wait(10.5)
-            Press("RightBracket");
-        end
-    else
-        while true do wait(10.5)
-            keypress(0xDD);
-        end
-    end
-end)
+
 if game.PlaceId~=7258239416 then  
   loadstring(game:HttpGet('https://raw.githubusercontent.com/ginchao/Viet-Nam-Piece-1/main/Beta1'))()  
   elseif game.PlaceId==4587545091 then  
@@ -221,7 +207,7 @@ end)
 
 local tgls = serv:Channel("NPC")
 local bb = nil
-local tgl = tgls:Dropdown("Choose Bag", {"Beli 100k [ sell ]","Beli 1M [ sell ]","Beli 10M [ sell ]","Beli 100M [ sell ]",} , function(y)
+local tgl = tgls:Dropdown("Choose Bag", {"Beli 100k [ sell ]","Beli 1m [ sell ]","Beli 10M [ sell ]","Beli 100M [ sell ]",} , function(y)
 bb = y
 end)
 tgls:Toggle("Choose To Auto Buy Bag",false, function(a)
@@ -773,6 +759,23 @@ HttpService = game:GetService("HttpService")
 else
 DiscordLib:Notification("Thông Báo","Tin Nhắn Chưa Được Gửi Hãy Thử Lại...","Ok..")
 end
+end)
+btns:Toggle("Anti Afk",false,function()
+-- // Anti afk V2 \\--
+task.spawn(function()
+    if game.PlaceId ~= 9821272782 then
+        getgenv().Press = function(v)
+            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+        end
+        while true do wait(10.5)
+            Press("RightBracket");
+        end
+    else
+        while true do wait(10.5)
+            keypress(0xDD);
+        end
+    end
+end)
 end)
   local inf = nil  
   btns:Toggle("Infjump", false, function(v)  
