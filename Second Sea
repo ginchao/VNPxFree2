@@ -212,12 +212,19 @@ bb = y
 end)
 tgls:Toggle("Choose To Auto Buy Bag",false, function(a)
 if bb == nil then
-DiscordLib:Notification("Warning", "Choose To Buy", "Ok")
+DiscordLib:Notification("Warning", "Choose To Buy Or Load Map", "Ok")
 else
 getgenv().BuyBag = a
 while BuyBag do wait()
 fireclickdetector(game:GetService("Workspace")["Star Island [ Lv 20000+ ]"].Bank[bb].ClickDetector)
 end
+end
+end)
+tgls:Toggle("Auto Drop Item",false,function()
+getgenv().drop = true
+while drop do wait()
+game:GetService("ReplicatedStorage"):WaitForChild("Save"):WaitForChild("MobileDrop"):FireServer()
+wait()
 end
 end)
 tgls:Toggle("Auto Buy God Box",false, function(v) 
