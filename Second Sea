@@ -226,79 +226,119 @@ tgls:Seperator()
   end  
   end)  
   
-    local drops = serv:Channel("Weapon")    
-    local Weaponlist = {}    
-    local Weapon = nil    
-    for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do    
-    if v:IsA("Tool") then    
-            table.insert(Weaponlist,v.Name)    
-    end    
-    end    
-    local drop = drops:Dropdown("Pick", Weaponlist, function(m)    
-    for i, k in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do    
-    if m == k.Name then    
-            Weapon = m    
-    if Weapon then    
-    game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))    
-    end    
-    end    
-    end    
-    end)    
-    drops:Button("Refresh Weapon", function()    
-    drop:Clear()    
-    for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do    
-    if v:IsA("Tool") then    
-    drop:Add(v.Name)    
-    end    
-    end    
-    end)    
-    drops:Toggle("Auto Equip",false, function(a)   
-   if Weapon == nil then   
-   DiscordLib:Notification("Warning", "Choose Weapon to AutoEquip", "Ok")   
-   elseif Weapon ~= nil then   
-            AutoEquiped = a    
-   end   
-    end)    
-    spawn(function()    
-            while wait() do    
-                    if AutoEquiped then    
-                            pcall(function()    
-                                    game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))    
-                            end)    
-                    end    
-            end    
-    end)    
-   drops:Toggle("Choose Weapon To Fast Actack",false, function(v)   
-   if Weapon == nil then   
-   DiscordLib:Notification("Warning", "Choose Weapon to Fast Attack", "Ok")   
-   elseif Weapon ~= nil then   
-    getgenv().er = v    
-    spawn(function()    
-    while er == true do    
-    pcall(function()    
-    while er do wait()  game:GetService("Players").LocalPlayer.Character[Weapon].Hitbox:FireServer(1, 1)    
-    wait()    
-    end    
-    end)    
-    end    
-    end)   
-   end   
-    end)   
- drops:Toggle("Grabtools",false, function(I)  
-  getgenv().autograb = I  
-  spawn(function()  
-  while autograb==true do wait()  
-  if not getgenv().autograb then break end  
-  local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")  
-  for _, child in ipairs(workspace:GetChildren()) do  
-  if game.Players.LocalPlayer.Character and child:IsA("BackpackItem") and child:FindFirstChild("Handle") then  
-  humanoid:EquipTool(child)  
+      local drops = serv:Channel("Weapon And Fast Attack")  
+  local Weaponlist = {}  
+  local Weapon = nil  
+  for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do  
+  if v:IsA("Tool") then  
+          table.insert(Weaponlist,v.Name)  
+  end  
+  end  
+  local drop = drops:Dropdown("Pick", Weaponlist, function(m)  
+  for i, k in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
+  if m == k.Name then  
+          Weapon = m  
+  if Weapon then  
+  game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))  
   end  
   end  
   end  
   end)  
+  drops:Button("Refresh Weapon", function()  
+  drop:Clear()  
+  for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
+  if v:IsA("Tool") then  
+  drop:Add(v.Name)  
+  end  
+  end  
+  end)  
+  drops:Toggle("Auto Equip",false, function(a) 
+ if Weapon == nil then 
+ DiscordLib:Notification("Warning", "Choose Weapon to AutoEquip", "Ok") 
+ elseif Weapon ~= nil then 
+          AutoEquiped = a  
+ end 
+  end)  
+  spawn(function()  
+          while wait() do  
+                  if AutoEquiped then  
+                          pcall(function()  
+                                  game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))  
+                          end)  
+                  end  
+          end  
+  end)  
+ drops:Toggle("Choose Weapon To Fast ActackV1",false, function(v) 
+ if Weapon == nil then 
+ DiscordLib:Notification("Warning", "Choose Weapon to Fast Attack", "Ok") 
+ elseif Weapon ~= nil then 
+  getgenv().ie = v  
+  spawn(function()  
+  while ie == true do  
+  pcall(function()  
+  while ie do wait()  game:GetService("Players").LocalPlayer.Character[Weapon].Hitbox:FireServer(1, 1)  
+  wait()  
+  end  
+  end)  
+  end  
   end) 
-    
+ end 
+  end)  
+
+drops:Label("Fast ActtackV2 No Choose") 
+ drops:Toggle("Fast ActtackV2 ",false, function(e) 
+ getgenv().auto = e 
+ spawn(function() 
+ while auto do wait() 
+ for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do 
+ if v:IsA("Tool") and v:FindFirstChild("Hitbox") then 
+ v.Hitbox:FireServer(90,90,90) 
+ end 
+ end 
+ end 
+ end) 
+ end) 
+
+  drops:Label("Fast Attack Equip") 
+ drops:Toggle("Fast Acttack ",false, function(e) 
+ getgenv().fasst = e 
+ if not getgenv().fasst then game.Players.LocalPlayer.Character.Humanoid:UnequipTools() end 
+ spawn(function() 
+ while fasst do wait() 
+ if not getgenv().fasst then break end 
+ pcall(function() 
+ for i, c in pairs(game.Players.LocalPlayer:FindFirstChild("Backpack"):GetChildren()) do 
+ if c:IsA("Tool") and c:FindFirstChild("Hitbox") then 
+ c.Parent = game.Players.LocalPlayer.Character 
+ else 
+ for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do 
+ if v:IsA("Tool") then 
+ v.Hitbox:FireServer(90,90,90) 
+ if fasst == false then game.Players.LocalPlayer.Character.Humanoid:UnequipTools()  
+ end 
+ end 
+ end 
+ end 
+ end 
+ end) 
+ end 
+ end) 
+ end) 
+
+ drops:Toggle("Grabtools",false, function(I) 
+ getgenv().autograb = I 
+ spawn(function() 
+ while autograb==true do wait() 
+ if not getgenv().autograb then break end 
+ local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") 
+ for _, child in ipairs(workspace:GetChildren()) do 
+ if game.Players.LocalPlayer.Character and child:IsA("BackpackItem") and child:FindFirstChild("Handle") then 
+ humanoid:EquipTool(child) 
+ end 
+ end 
+ end 
+ end) 
+ end) 
     local drops = serv:Channel("Player")    
     local plrlist = {}    
     local plr = nil    
