@@ -69,8 +69,8 @@ end)
    end)   
    end   
    end)   
- local tgls = serv:Channel("Stats and Auto Skill") 
- tgls:Toggle("Auto Sword",false, function(z) 
+   local tgls = serv:Channel("Stats and Auto Skill") 
+  tgls:Toggle("Auto Sword",false, function(z) 
  getgenv().autostats = z 
  spawn(function() 
  while autostats do wait() 
@@ -80,27 +80,27 @@ end)
  end) 
  end) 
  tgls:Toggle("Auto Fruit",false, function(z) 
- getgenv().autostats = z 
+ getgenv().autostatsf = z 
  spawn(function() 
- while autostats do wait() 
+ while autostatsf do wait() 
  game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("DevilFruit") 
  wait() 
  end 
  end) 
  end) 
  tgls:Toggle("Auto Health",false, function(z) 
- getgenv().autostats = z 
+ getgenv().autostatsh = z 
  spawn(function() 
- while autostats do wait() 
+ while autostatsh do wait() 
  game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("MaxHealth") 
  wait() 
  end 
  end) 
  end) 
  tgls:Toggle("Auto Melee",false, function(z) 
- getgenv().autostats = z 
+ getgenv().autostatsm = z 
  spawn(function() 
- while autostats==true do wait() 
+ while autostatsm == true do wait() 
  game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("Melee") 
  wait() 
  end 
@@ -203,30 +203,87 @@ end
 end)
 end
 end)
-tgls:Seperator()
-  tgls:Label("Buy")   
-  tgls:Toggle("AutoClickGodBox",false, function(e)  
-  getgenv().autobox = e 
- for _ = 1,2 do 
- while autobox do wait() 
- fireclickdetector(game:GetService("Workspace")["Platinum Town [ 2000 - 3000 ]"].PlatinumMAP.GodBox.ClickDetector) 
- end 
+
+local tgls = serv:Channel("NPC")
+local bb = nil
+local tgl = tgls:Dropdown("Choose Bag", {"Beli 100k [ sell ]","Beli 1M [ sell ]","Beli 10M [ sell ]","Beli 100M [ sell ]",} , function(y)
+bb = y
+end)
+tgls:Toggle("Choose To Auto Buy Bag",false, function(a)
+if bb == nil then
+DiscordLib:Notification("Warning", "Choose To Buy", "Ok")
+else
+getgenv().BuyBag = a
+while BuyBag do wait()
+fireclickdetector(game:GetService("Workspace")["Star Island [ Lv 20000+ ]"].Bank[bb].ClickDetector)
+end
+end
+end)
+tgls:Toggle("Auto Buy God Box",false, function(v) 
+getgenv().autoyoruv3 = v 
+ while autoyoruv3 do task.wait()
+ pcall(function() 
+ fireclickdetector(game:GetService("Workspace")["Platinum Town [ 2000 - 3000 ]"].PlatinumMAP.GodBox.ClickDetector)
+ end) 
  end 
  end) 
-  tgls:Toggle("Auto Random Secret Fruit",false, function(v)  
-  for _ = 1,2 do  
-  getgenv().auto = v  
-  spawn(function()  
-  while auto do wait()  
-  pcall(function()  
-  fireclickdetector(game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]["Secret Random"].RANDOM) wait()  
-  end)  
-  end  
-  end)  
-  end  
-  end)  
-  
-      local drops = serv:Channel("Weapon And Fast Attack")  
+ tgls:Toggle("Auto Buy Fruit",false, function(v) 
+ getgenv().auto = v
+ spawn(function() 
+ while auto do task.wait() 
+ for i, v in pairs(game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]:GetChildren()) do
+if v:FindFirstChild("Meshes/DeadsAccessoryB") then
+fireclickdetector(v.RANDOM)
+end
+end
+ end 
+ end)
+ end) 
+ tgls:Toggle("Auto Buy Secret Fruit",false, function(v) 
+ getgenv().auto1 = v
+ spawn(function() 
+ while auto1 do task.wait() 
+ fireclickdetector(game:GetService("Workspace")["Marine Island [ 3000 - 5000 ]"]["Secret Random"].RANDOM)
+ end 
+ end) 
+ end) 
+tgls:Button("Buy Air Cannon", function(v) 
+if game:GetService("Workspace")["Kaido Island [ Lv 1000+ ]"]:FindFirstChild(" ")
+then
+ fireclickdetector(game:GetService("Workspace")["Kaido Island [ Lv 1000+ ]"][" "].ClickDetector)
+else
+DiscordLib:Notification("Warning", "Please Try Again", "Ok")
+end
+ end) 
+tgls:Button("Buy Tengen", function(v) 
+ for i, v in pairs(game:GetService("Workspace")["NickBeo Island [ 7000 + ]"]:GetChildren()) do
+if v:FindFirstChild("WSAPonytail") then
+fireclickdetector(v.ClickDetector)
+end
+end
+ end) 
+tgls:Button("Buy Saitama", function(v) 
+for i, v in pairs(game:GetService("Workspace")["NickBeo Island [ 7000 + ]"]:GetChildren()) do
+if v:FindFirstChild("Ultra-Fabulous Hair") then
+fireclickdetector(v.ClickDetector)
+end
+end
+ end) 
+tgls:Button("Buy Deku", function() 
+ for i, v in pairs(game:GetService("Workspace")["Star Island [ Lv 20000+ ]"]:GetChildren()) do
+if v:FindFirstChild("Gojo Hair") then
+fireclickdetector(v.ClickDetector)
+end
+end
+ end) 
+tgls:Button("Buy Garou", function()
+ for i, v in pairs(game:GetService("Workspace")["Star Island [ Lv 20000+ ]"]:GetChildren()) do
+if v:FindFirstChild("Y2K Punk Cat BeanieAccessory") then
+fireclickdetector(v.ClickDetector)
+end
+end
+ end) 
+ local drops = serv:Channel("Weapon And Fast Attack")  
   local Weaponlist = {}  
   local Weapon = nil  
   for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do  
