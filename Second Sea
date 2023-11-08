@@ -43,6 +43,7 @@ end
 end)
 end
 end
+end)
    drops:Toggle("Chose Mob To Auto Quest",false, function(questauto)   
    if quest == nil then   
    DiscordLib:Notification("Warning", "Choose Mob To Auto Quest", "Ok")   
