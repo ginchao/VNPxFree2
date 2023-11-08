@@ -224,11 +224,10 @@ fireclickdetector(game:GetService("Workspace")["Star Island [ Lv 20000+ ]"].Bank
 end
 end
 end)
-tgls:Toggle("Auto Drop Item",false,function()
-getgenv().drop = true
+tgls:Toggle("Auto Drop Item",false,function(v)
+getgenv().drop = v
 while drop do wait()
 game:GetService("ReplicatedStorage"):WaitForChild("Save"):WaitForChild("MobileDrop"):FireServer()
-wait()
 end
 end)
 tgls:Toggle("Auto Buy God Box",false, function(v) 
@@ -368,8 +367,8 @@ drops:Label("Fast ActtackV2 No Choose")
  end) 
  end) 
 
-  drops:Label("Fast Attack Equip") 
- drops:Toggle("Fast Acttack ",false, function(e) 
+  drops:Label("Fast AttackV3 No Choose") 
+ drops:Toggle("Fast ActtackV3 ",false, function(e) 
  getgenv().fasst = e 
  if not getgenv().fasst then game.Players.LocalPlayer.Character.Humanoid:UnequipTools() end 
  spawn(function() 
