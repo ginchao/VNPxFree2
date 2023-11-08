@@ -32,14 +32,17 @@ if quest == nil then
 if bringmob2 ~= v2 then
 v2 = game.RunService.RenderStepped:Connect(function()
 if bringmob2==false then v2:Disconnect()  end
-game.Workspace["NPC DAMAGE"][quest].HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,6.2,0)
+game.Workspace["NPC DAMAGE"][quest].HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,5.5,0)
 if quest == "Kaidou" then
 game.Workspace["NPC DAMAGE"][quest].HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,3,-13)
+elseif quest == "Garou" then
+game.Workspace["NPC DAMAGE"][quest].HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,6.2,0)
+elseif quest == "Tango" then
+game.Workspace["NPC DAMAGE"][quest].HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,6.2,0)
 end
 end)
 end
 end
-end)   
    drops:Toggle("Chose Mob To Auto Quest",false, function(questauto)   
    if quest == nil then   
    DiscordLib:Notification("Warning", "Choose Mob To Auto Quest", "Ok")   
