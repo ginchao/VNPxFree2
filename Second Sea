@@ -933,7 +933,28 @@ end)
  local tps = game:GetService("TeleportService") 
  DiscordLib:Notification("Wait a Sec","Teleport To First Sea...","...") 
  tps:Teleport("4587545091") 
- end) 
+ end)
+btns:Button("Change Server", function()
+local httprequest = request or http_request or (http and http.request) or (fluxus.request and fluxus) or syn.request
+PlaceId = game.PlaceId
+if httprequest then
+                local servers = {}
+                local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100", PlaceId)})
+                local body = game.HttpService:JSONDecode(req.Body)
+                if body and body.data then
+                        for i, v in next, body.data do
+                                if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
+                                        table.insert(servers, 1, v.id)
+                                end
+                        end
+                end
+                if #servers > 0 then
+                        game.TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game.Players.LocalPlayer)
+                else
+                        DiscordLib:Notification("Warning","Không Tìm Được Server, Hãy Thử Lại.","Ok")
+end
+                end
+end)
  btns:Label("More") 
  btns:Button("Universal, Test Hub", function() 
  loadstring(game:HttpGet("https://raw.githubusercontent.com/ginchao/TestHub/main/Universal"))() 
