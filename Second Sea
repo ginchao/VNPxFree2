@@ -719,7 +719,7 @@ end
           local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart  
           rootPart.CFrame = CFrame.new(-1280.56299, 87693.3281, 3242.69702, -0.0239899773, -0, -0.999712229, -0, 1, -0, 0.999712229, 0, -0.0239899773)*CFrame.new(0,9, 0)  
   end)  
-  local btns = serv:Channel("Mics")  
+  local btns = serv:Channel("Misc")  
   btns:Label("Cre Hub:Grabiel Ynu")  
 btns:Textbox("Bug Report", "Type!", true, function(t)
 if t then
