@@ -1,6 +1,6 @@
 if game.PlaceId==4587545091 then   
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ginchao/VNPxFree/main/First%20Sea'))() 
-elseif game.PlacrId==7258239416 then
+elseif game.PlaceId==7258239416 then
   local DiscordLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/ginchao/Discord-Lib/main/Discord-Lib'))()  
   local win = DiscordLib:Window("Test Hub X Free No Premium")  
 local per = game.Players.LocalPlayer.Name
