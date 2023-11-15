@@ -75,6 +75,46 @@ drops:Button("Base Sky", function()
 
     local box = Instance.new("Part") box.Parent = workspace box.Anchored = true box.CanCollide = true box.Name = "Testhub" box.Size = Vector3.new(100000,2,1000000) box.Position = Vector3.new(100,100000,100) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Testhub.CFrame*CFrame.new(0,15,0)
 end)
+drops:Toggle("Esp 👁️", false, function(Value)
+    -- Credits to Xiba
+    getgenv().FlaggingESP = Value
+
+    local function ApplyESP(v)
+        if v.Character and v.Character:FindFirstChildOfClass('Humanoid') then
+            v.Character.Humanoid.NameDisplayDistance = getgenv().FlaggingESP and 9e9 or 50
+            v.Character.Humanoid.NameOcclusion = getgenv().FlaggingESP and "NoOcclusion" or "OccludeAll"
+            v.Character.Humanoid.HealthDisplayDistance = getgenv().FlaggingESP and 9e9 or 50
+            v.Character.Humanoid.HealthDisplayType = getgenv().FlaggingESP and "AlwaysOn" or "Never"
+            v.Character.Humanoid.Health = v.Character.Humanoid.Health
+        end
+    end
+
+    for i, v in pairs(game.Players:GetPlayers()) do
+        ApplyESP(v)
+    end
+
+    game.Players.PlayerAdded:Connect(function(v)
+        ApplyESP(v)
+        v.CharacterAdded:Connect(function()
+            task.wait(0.33)
+            ApplyESP(v)
+        end)
+    end)
+end) 
+ drops:Toggle("Grabtools",false, function(I) 
+ getgenv().autograb = I 
+ spawn(function() 
+ while autograb==true do wait() 
+ if not getgenv().autograb then break end 
+ local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") 
+ for _, child in ipairs(workspace:GetChildren()) do 
+ if game.Players.LocalPlayer.Character and child:IsA("BackpackItem") and child:FindFirstChild("Handle") then 
+ humanoid:EquipTool(child) 
+ end 
+ end 
+ end 
+ end) 
+ end) 
    local tgls = serv:Channel("Stats and Auto Skill") 
   tgls:Toggle("Auto Sword",false, function(z) 
  getgenv().autostats = z 
@@ -394,20 +434,6 @@ drops:Label("---------------------Fast ActtackV2 No Choose---------------------"
  end) 
  end) 
 
- drops:Toggle("Grabtools",false, function(I) 
- getgenv().autograb = I 
- spawn(function() 
- while autograb==true do wait() 
- if not getgenv().autograb then break end 
- local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") 
- for _, child in ipairs(workspace:GetChildren()) do 
- if game.Players.LocalPlayer.Character and child:IsA("BackpackItem") and child:FindFirstChild("Handle") then 
- humanoid:EquipTool(child) 
- end 
- end 
- end 
- end) 
- end) 
     local drops = serv:Channel("Player")    
     local plrlist = {}    
     local plr = nil    
