@@ -71,6 +71,10 @@ end)
    end)   
    end   
    end)   
+drops:Button("Base Sky", function()   
+
+    local box = Instance.new("Part") box.Parent = workspace box.Anchored = true box.CanCollide = true box.Name = "Testhub" box.Size = Vector3.new(100000,2,1000000) box.Position = Vector3.new(100,8000,100) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Testhub.CFrame*CFrame.new(0,15,0)
+end)
    local tgls = serv:Channel("Stats and Auto Skill") 
   tgls:Toggle("Auto Sword",false, function(z) 
  getgenv().autostats = z 
@@ -801,54 +805,7 @@ end)
   
   
   
-  btns:Button("WallSky", function()  
   
-   Local = game:GetService('Players').LocalPlayer   
-   Char  = Local.Character   
-   touched,tpdback = false, false   
-   Local.CharacterAdded:connect(function(char)   
-       if script.Disabled ~= true then   
-           wait(.25)   
-           loc = Char.HumanoidRootPart.Position   
-           Char:MoveTo(box.Position + Vector3.new(0,.5,0))   
-       end   
-   end)   
-   game:GetService('UserInputService').InputBegan:connect(function(key)   
-       if key.KeyCode == Enum.KeyCode.Equals then   
-           if script.Disabled ~= true then   
-               script.Disabled = true   
-               print'you may re-execute'   
-           end   
-       end   
-   end)   
-   box = Instance.new('Part',workspace)   
-   box.Anchored = true   
-   box.CanCollide = true   
-   box.Size = Vector3.new(1000,2,1000)   
-   box.Position = Vector3.new(10,100000,10)   
-   box.Touched:connect(function(part)   
-       if (part.Parent.Name == Local.Name) then   
-           if touched == false then   
-               touched = true   
-               function apply()   
-                   if script.Disabled ~= true then   
-                       no = Char.HumanoidRootPart:Clone()   
-                       wait(.25)   
-                       Char.HumanoidRootPart:Destroy()   
-                       no.Parent = Char   
-                       Char:MoveTo(loc)   
-                       touched = false   
-                   end end   
-               if Char then   
-                   apply()   
-               end   
-           end   
-       end   
-   end)   
-   repeat wait() until Char   
-   loc = Char.HumanoidRootPart.Position   
-   Char:MoveTo(box.Position + Vector3.new(0,.5,0))   
-   end)   
    btns:Button("Fast Mode", function()   
    local ToDisable = {   
            Textures = true,   
