@@ -652,68 +652,149 @@ end
  end 
  end  game:GetService('RunService').RenderStepped:connect(hit) 
  end)
-   local sldrs = serv:Channel("Walk Speed")    
-   sldrs:Button("Clear", function(v)    
-    game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2    
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16    
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50    
-    end)    
+      local sldrs = serv:Channel("Walk Speed")   
+local spd = nil
     local sldr = sldrs:Slider("Speeds", 0, 1000, 0, function(v)    
-  
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v    
+_G.speed = v
+local function SPDs()
+if _G.speed then
+pcall(function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v    
+end)
+end
+end
+spd = game:GetService('RunService').RenderStepped:Connect(SPDs)
     end)    
-    sldrs:Button("Speed 1000", function()    
-    sldr:Change(1000)    
+    sldrs:Button("Speed 1000", function()
+for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Humanoid") then
+if v.WalkSpeed == 30 or v.WalkSpeed == 150 or v.WalkSpeed == 70 or v.WalkSpeed == 500 then
+DiscordLib: Notification("Warning","Please Clear Speed","Ok")
+else
+    sldr:Change("1000")    
+end
+end
+end
     end)    
     sldrs:Button("Speed 500", function()    
-    sldr:Change(500)    
+    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Humanoid") then
+if v.WalkSpeed == 30 or v.WalkSpeed == 150 or v.WalkSpeed == 70 or v.WalkSpeed == 1000 then
+DiscordLib: Notification("Warning","Please Clear Speed","Ok")
+else
+    sldr:Change("500")    
+end
+end
+end
     end)    
-    sldrs:Button("Speed 300", function()    
-    sldr:Change(300)    
+sldrs:Button("Speed 150", function()    
+    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Humanoid") then
+if v.WalkSpeed == 30 or v.WalkSpeed == 70 or v.WalkSpeed == 500 or v.WalkSpeed == 1000 then
+DiscordLib: Notification("Warning","Please Clear Speed","Ok")
+else
+    sldr:Change("150")    
+end
+end
+end
     end)    
-    sldrs:Button("Speed 100", function()    
-    sldr:Change(100)    
-    end)    
-    sldrs:Button("Speed 50", function()    
-    sldr:Change(50)    
+    sldrs:Button("Speed 70", function()    
+    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Humanoid") then
+if v.WalkSpeed == 30 or v.WalkSpeed == 150 or v.WalkSpeed == 500 or v.WalkSpeed == 1000 then
+DiscordLib: Notification("Warning","Please Clear Speed","Ok")
+else
+    sldr:Change("70")    
+end
+end
+end
     end)    
     sldrs:Button("Speed 30", function()    
-    sldr:Change(30)    
-    end)    
-    local sldr = sldrs:Slider("Jumps", 0, 1000, 0, function(v)    
-  
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v    
-    end)    
+    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Humanoid") then
+if v.WalkSpeed == 1000 or v.WalkSpeed == 150 or v.WalkSpeed == 70 or v.WalkSpeed == 500  then
+DiscordLib: Notification("Warning","Please Clear Speed","Ok")
+else
+    sldr:Change("30")    
+end
+end
+end
+     end)    
+sldrs:Button("Clear Speed", function(v)    
+  spd:Disconnect()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+    local jm = nil
+    local sldr = sldrs:Slider("JumpPower", 0, 1000, 0, function(v)    
+_G.jpm = v
+local function JPMs()
+if _G.jpm then
+pcall(function()
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = v    
+end)
+end
+end
+jm = game:GetService('RunService').RenderStepped:Connect(JPMs)    
+end)    
     sldrs:Button("Jump 1000", function()    
-    sldr:Change(1000)    
+    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Humanoid") then
+if v.JumpPower == 70 or v.JumpPower == 100 or v.JumpPower == 300 or v.JumpPower == 500  then
+DiscordLib: Notification("Warning","Please Clear Jump","Ok")
+else
+    sldr:Change("1000")    
+end
+end
+end
     end)    
     sldrs:Button("Jump 500", function()    
-    sldr:Change(500)    
+    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Humanoid") then
+if v.JumpPower == 70 or v.JumpPower == 100 or v.JumpPower == 300 or v.JumpPower == 1000  then
+DiscordLib: Notification("Warning","Please Clear Jump","Ok")
+else
+    sldr:Change("500")    
+end
+end
+end
     end)    
     sldrs:Button("Jump 300", function()    
-    sldr:Change(300)    
+    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Humanoid") then
+if v.JumpPower == 70 or v.JumpPower == 100 or v.JumpPower == 1000 or v.JumpPower == 500  then
+DiscordLib: Notification("Warning","Please Clear Jump","Ok")
+else
+    sldr:Change("300")    
+end
+end
+end
     end)    
     sldrs:Button("Jump 100", function()    
-    sldr:Change(100)    
+    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Humanoid") then
+if v.JumpPower == 70 or v.JumpPower == 1000 or v.JumpPower == 300 or v.JumpPower == 500  then
+DiscordLib: Notification("Warning","Please Clear Jump","Ok")
+else
+    sldr:Change("100")    
+end
+end
+end
     end)    
     sldrs:Button("Jump 70", function()    
-    sldr:Change(70)    
-    end)    
-    local sldr = sldrs:Slider("height", 0, 100, 0, function(v)    
-    game.Players.LocalPlayer.Character.Humanoid.HipHeight = v    
-    end)    
-    sldrs:Button("height 100", function()    
-    sldr:Change(100)    
-    end)    
-    sldrs:Button("height 50", function()    
-    sldr:Change(50)    
-    end)    
-    sldrs:Button("height 30", function()    
-    sldr:Change(30)    
-    end)    
-    sldrs:Button("height 10", function()    
-    sldr:Change(10)    
+    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Humanoid") then
+if v.JumpPower == 1000 or v.JumpPower == 100 or v.JumpPower == 300 or v.JumpPower == 500  then
+DiscordLib: Notification("Warning","Please Clear Jump","Ok")
+else
+    sldr:Change("70")    
+end
+end
+end
     end)   
+sldrs:Button("Clear Jump", function(v)    
+  jm:Disconnect()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 40
+end)
   local btns = serv:Channel("Island")  
   
   btns:Button("Kaido Island lv 2000", function()  
