@@ -980,6 +980,11 @@ end)
                   local plr = game:GetService("Players").LocalPlayer  
                   tps:TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)  
   end)  
+   btns:Button("Teleport To First Sea", function() 
+ local tps = game:GetService("TeleportService") 
+ DiscordLib:Notification("Wait a Sec","Teleport To First Sea...","...") 
+ tps:Teleport("4587545091") 
+ end) 
    btns:Button("Change Server", function()
 local httprequest = request or http_request or (http and http.request) or (fluxus.request and fluxus) or syn.request
 PlaceId = game.PlaceId
