@@ -8,7 +8,7 @@ elseif game.PlaceId==7258239416 then
 local per = game.Players.LocalPlayer.Name
  DiscordLib:Notification("Test Hub","Hello! "..""..per..".                                              ".."Thanks For Using Test Hub","Ok") 
   local serv = win:Server("VNP2 X Free", "")  
-    local drops = serv:Channel("Mob")   
+    local drops = serv:Channel("Farm And LocalPlayer")   
    local questlist = {}
 local quest = nil   
 for i, v in pairs(Workspace["NPC DAMAGE"]:GetChildren()) do
@@ -103,6 +103,52 @@ drops:Toggle("Esp 👁️", false, function(Value)
         end)
     end)
 end) 
+drops:Toggle("Anti Afk",false,function()
+-- // Anti afk V2 \\--
+task.spawn(function()
+    if game.PlaceId ~= 9821272782 then
+        getgenv().Press = function(v)
+            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+        end
+        while true do wait(10.5)
+            Press("RightBracket");
+        end
+    else
+        while true do wait(10.5)
+            keypress(0xDD);
+        end
+    end
+end)
+end)
+ local inf = nil 
+ drops:Toggle("Infjump", false, function(v) 
+ if inf then inf:Disconnect() end 
+ getgenv().infi = v 
+ local Player = game.Players.LocalPlayer 
+ if infi ~= inf then 
+ inf = game.UserInputService.JumpRequest:Connect(function() 
+ if infi == false then inf:Disconnect() end 
+     Player.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) 
+ wait() 
+ end) 
+ end 
+ end) 
+local Noclipping = nil 
+ drops:Toggle("Noclip",false, function(v) 
+ getgenv().Clip = v 
+ wait(0.1) 
+ local function NoclipLoop() 
+ if Clip == true and game.Players.LocalPlayer.Character ~= nil then 
+ for _, c in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do 
+                                 if c:IsA("BasePart") and c.CanCollide == true and c.Name ~= floatName then 
+ c.CanCollide = false 
+ end 
+ end 
+ end 
+ end 
+ Noclipping = game.RunService.Stepped:Connect(NoclipLoop) 
+ if not getgenv().Clip then Noclipping:Disconnect() end 
+ end) 
  drops:Toggle("Grabtools",false, function(I) 
  getgenv().autograb = I 
  spawn(function() 
@@ -606,22 +652,6 @@ end
 game:GetService('RunService').RenderStepped:connect(clip) 
 end
  end) 
-  local Noclipping = nil  
-  drops:Toggle("Noclip",false, function(v)  
-  getgenv().Clip = v  
-  wait(0.1)  
-  local function NoclipLoop()  
-  if Clip == true and game.Players.LocalPlayer.Character ~= nil then  
-  for _, c in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do  
-                                  if c:IsA("BasePart") and c.CanCollide == true and c.Name ~= floatName then  
-  c.CanCollide = false  
-  end  
-  end  
-  end  
-  end  
-  Noclipping = game.RunService.Stepped:Connect(NoclipLoop)  
-  if not getgenv().Clip then Noclipping:Disconnect() end  
-  end)  
   
   drops:Button("Hitbox Refresh", function()  
   drop:Change("1")  
@@ -868,41 +898,7 @@ else
 DiscordLib:Notification("Thông Báo","Tin Nhắn Chưa Được Gửi Hãy Thử Lại...","Ok..")
 end
 end)
-btns:Toggle("Anti Afk",false,function()
--- // Anti afk V2 \\--
-task.spawn(function()
-    if game.PlaceId ~= 9821272782 then
-        getgenv().Press = function(v)
-            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-        end
-        while true do wait(10.5)
-            Press("RightBracket");
-        end
-    else
-        while true do wait(10.5)
-            keypress(0xDD);
-        end
-    end
-end)
-end)
-  local inf = nil  
-  btns:Toggle("Infjump", false, function(v)  
-  if inf then inf:Disconnect() end  
-  getgenv().infi = v  
-  local Player = game.Players.LocalPlayer  
-  if infi ~= inf then  
-  inf = game.UserInputService.JumpRequest:Connect(function()  
-  if infi == false then inf:Disconnect() end  
-      Player.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)  
-  wait()  
-  end)  
-  end  
-  end)  
-  
-  
-  
-  
-  
+
    btns:Button("Fast Mode", function()   
    local ToDisable = {   
            Textures = true,   
