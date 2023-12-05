@@ -313,12 +313,12 @@ fireclickdetector(game:GetService("Workspace")["Star Island [ Lv 20000+ ]"].Bank
 end
 end
 end)
---tgls:Toggle("Auto Drop Item",false,function(v)
-getgenv().drop = v
+tgls:Toggle("Auto Drop Item",false,function(v)
+--getgenv().drop = v
 while drop do wait()
 game:GetService("ReplicatedStorage"):WaitForChild("Save"):WaitForChild("MobileDrop"):FireServer()
 end
-end)--
+end)
 tgls:Toggle("Auto Buy God Box",false, function(v) 
 getgenv().autoyoruv3 = v 
  while autoyoruv3 do task.wait()
