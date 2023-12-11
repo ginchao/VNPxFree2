@@ -827,7 +827,7 @@ end)
           local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart  
           rootPart.CFrame = CFrame.new(-708.903564, 87687.7266, 809.050476, 0.312079072, -9.11389222e-08, 0.950056136, -5.59602764e-09, 1, 9.77682433e-08, -0.950056136, -3.58279628e-08, 0.312079072)*CFrame.new(0, 5, 0)  
   end)  
-btns:Button("Sukuna Island lv 5000+", function() game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1453.3580322265625, 87687.90625, 2773.896240234375)
+btns:Button("Sukuna Island lv 50000+", function() game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1453.3580322265625, 87687.90625, 2773.896240234375)
 end)
   btns:Button("Garou Island lv 20000+", function()   
            local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart   
