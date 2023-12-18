@@ -516,7 +516,19 @@ drops:Label("---------------------Fast ActtackV2 No Choose---------------------"
    end   
    end  
   end  
-   end)   
+   end)
+drops:Toggle("Lookat Player",false,function(v)
+if plr == nil then 
+ DiscordLib:Notification("Warning", "Choose Player to Spectate, Need Loadmap", "Ok") 
+ else
+getgenv().look = v
+game.RunService.RenderStepped:Connect(function()
+if getgenv().look then 
+workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.p, game.Players[plr].Character.Head.CFrame.p)
+end
+end)
+end
+end)   
   drops:Toggle("Spectate Player",false, function(h)  
   if plr == nil then  
   DiscordLib:Notification("Warning", "Choose Player to Spectate", "Ok")  
