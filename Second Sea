@@ -517,7 +517,7 @@ drops:Label("---------------------Fast ActtackV2 No Choose---------------------"
    end  
   end  
    end)
-drops:Toggle("Lookat Player",false,function(v)
+drops:Toggle("Lock Screen🖥️",false,function(v)
 if plr == nil then 
  DiscordLib:Notification("Warning", "Choose Player to Spectate, Need Loadmap", "Ok") 
  else
@@ -528,7 +528,26 @@ workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.p, ga
 end
 end)
 end
-end)   
+end)
+drops:Toggle("🔗Lookat | No Shift Lock",false,function(v)
+if plr == nil then 
+ DiscordLib:Notification("Warning", "Choose Player to Spectate, Need Loadmap", "Ok") 
+ else
+getgenv().lookatv2 = v
+local plrlo = game.Players[plr].Character
+game:GetService("RunService").RenderStepped:Connect(function()
+if getgenv().lookatv2 then
+if game.Players.LocalPlayer.Character.PrimaryPart and plrlo:FindFirstChild("HumanoidRootPart") then
+				local chrPos=game.Players.LocalPlayer.Character.PrimaryPart.Position
+				local tPos=plrlo:FindFirstChild("HumanoidRootPart").Position
+				local modTPos=Vector3.new(tPos.X,chrPos.Y,tPos.Z)
+				local newCF=CFrame.new(chrPos,modTPos)
+				game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(newCF)
+end
+end
+end)
+end
+end)
   drops:Toggle("Spectate Player",false, function(h)  
   if plr == nil then  
   DiscordLib:Notification("Warning", "Choose Player to Spectate", "Ok")  
