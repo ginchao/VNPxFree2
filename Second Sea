@@ -617,7 +617,7 @@ if brin == false then v2:Disconnect() end
    end   
    end   
    end)  
- local drops = serv:Channel("SHOP") 
+ local drops = serv:Channel("Hibox | Beta") 
  
    local plrlist = {}   
    local plr = nil   
