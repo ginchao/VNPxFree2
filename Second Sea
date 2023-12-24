@@ -377,6 +377,9 @@ fireclickdetector(v.ClickDetector)
 end
 end
  end) 
+tgls:Button("Buy Sukuna",function()
+fireclickdetector(game:GetService("Workspace")["Cursed Island [  50000+ ]"][" "].ClickDetector)
+end)
  local drops = serv:Channel("Weapon+Fast Attack")  
   local Weaponlist = {}  
   local Weapon = nil  
