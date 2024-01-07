@@ -1060,7 +1060,7 @@ drops:Button("CopyLinkFb Người Phát Quà",function()
 setclipboard("https://www.facebook.com/vanduysama?mibextid=LQQJ4d")
 end)
 drops:Label("🟢 1 Beli = 90%".." | Khi Trúng Chụp Hình Lại Gửi Lên Chủ Hoặc Box") 
-drops:Label("🔵 1B = 0,00005%")
+drops:Label("🔵 1B = 0,000005%")
 drops:Label("🔴 Elemental = 0,0000003%")
 drops:Label("⭐ UpHubX20BuyV2 Vĩnh Viễn = 0,00000001%") drops:Label("🔴 YoruV3 = 0,0000009%") drops:Label("🟣 Item Tự Chọn = 0,000001%")
 local count = 0
@@ -1074,7 +1074,7 @@ local gifts = {
   {name = "🟣 Item Tự Chọn", prob = 0.0000001}, -- 0,0000001% chance
   {name = "🔴 YoruV3", prob = 0.0000009}, -- 0,0000009% chance
   {name = "🔴 Elemental", prob = 0.0000003}, -- 0,0000003% chance
-  {name = "🔵 1B Beli", prob = 0.00005}, 
+  {name = "🔵 1B Beli", prob = 0.000005}, 
   {name = "🟢 1 Beli", prob = 0.9} -- 90% chance
 }
 local total_prob = 0
