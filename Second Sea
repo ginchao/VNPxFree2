@@ -424,6 +424,24 @@ end)
           end  
   end)  
 
+ local UserInputService = game:GetService("UserInputService")
+local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+drops:Toggle("Fast Attack👆",false,function(h)
+getgenv().tunhan = h
+local tapCount = 0 -- biến để đếm số lần nhấn
+
+UserInputService.TouchTapInWorld:Connect(function(position, processedByUI)
+if getgenv().tunhan then
+    local touchPosition = position
+    tapCount = tapCount + 1
+for i, v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+if v:IsA("Tool") and v:FindFirstChild("Hitbox") then
+    v.Hitbox:FireServer(touchPosition, tapCount) 
+end
+end
+end
+end)
+drops:Seperator()
  drops:Toggle("Fast ActtackV2 ",false, function(e) 
  getgenv().auto = e 
  spawn(function() 
@@ -437,7 +455,7 @@ end)
  end) 
  end) 
 
-  drops:Label("---------------------Fast AttackV3 No Choose---------------------") 
+  drops:Seperator()
  drops:Toggle("Fast ActtackV3 ",false, function(e) 
  getgenv().fasst = e 
  if not getgenv().fasst then game.Players.LocalPlayer.Character.Humanoid:UnequipTools() end 
@@ -462,6 +480,8 @@ end)
  end 
  end) 
  end) 
+
+
 
     local drops = serv:Channel("Player")    
     local plrlist = {}    
