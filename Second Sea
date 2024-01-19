@@ -441,6 +441,7 @@ end
 end
 end
 end)
+end)
 drops:Seperator()
  drops:Toggle("Fast ActtackV2 ",false, function(e) 
  getgenv().auto = e 
