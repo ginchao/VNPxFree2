@@ -67,7 +67,9 @@ end)
  elseif quest == "Garou" and quest ~= nil then   
   game:GetService("Workspace")["Star Island [ Lv 20000+ ]"]["Garou Quest [ Lv 20.000+ ]"].Quest.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()
 elseif quest == "Sukuna" and quest ~= nil then
-game:GetService("Workspace")["Cursed Island [  50000+ ]"]["Sukuna Quest [ Lv 50.000+ ]"].Quest.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()      
+game:GetService("Workspace")["Cursed Island [  50000+ ]"]["Sukuna Quest [ Lv 50.000+ ]"].Quest.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()
+elseif quest == "Grab" and quest ~= nil then
+game:GetService("Workspace")["Grab  Island [ Lv 100000+ ]"]["Grab Quest [ Lv 100.000+ ]"].Quest.QuestTake.QuestTake.Accept2.RemoteEvent:FireServer()         
    end   
    end)   
    end   
@@ -863,7 +865,10 @@ end)
   btns:Button("Kaido Island lv 2000", function()  
           local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart  
           rootPart.CFrame = CFrame.new(-708.903564, 87687.7266, 809.050476, 0.312079072, -9.11389222e-08, 0.950056136, -5.59602764e-09, 1, 9.77682433e-08, -0.950056136, -3.58279628e-08, 0.312079072)*CFrame.new(0, 5, 0)  
-  end)  
+  end)
+btns:Button("New Island lv 200000+", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2006.93689, 87696.8516, -59.0255051, 0.0173726063, -1.32637981e-08, -0.999849081, -3.41540378e-08, 1, -1.38592346e-08, 0.999849081, 3.43896538e-08, 0.0173726063)
+end)  
 btns:Button("Sukuna Island lv 50000+", function() game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1453.3580322265625, 87687.90625, 2773.896240234375)
 end)
   btns:Button("Garou Island lv 20000+", function()   
